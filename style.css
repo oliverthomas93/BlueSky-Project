@@ -448,7 +448,7 @@ footer {
         right: 0px;
         height: 92vh;
         top: 8vh;
-        background: rgb(170, 170, 170);
+        background: rgb(141, 141, 141);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -456,12 +456,14 @@ footer {
         text-align: center;
         transform: translateX(100%);
         margin-right: 0;
+
         transition: transform 0.5s ease-in;
     }
 
     .nav a {
         width: 100%;
         color: #fff;
+        opacity: 0;
     }
 
     .burger-container {
@@ -609,4 +611,15 @@ footer {
 
 .nav-active {
     transform: translateX(0%);
+}
+
+@keyframes navFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
