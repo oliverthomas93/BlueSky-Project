@@ -2,368 +2,645 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-main {
-    background: #22333b;
-}
-/*#22333b*/
-.intro {
-    position: relative;
-    height: 100vh;
-    background: #1b1b1b;
-    border: #22333b solid 40px;
-    font-family: 'Black Ops One', cursive;
-}
-.intro-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 100%;
-    letter-spacing: 3px;
-    padding: 0 5% 0 8%;
-    padding-top: 20px;
-    max-width: 1400px;
-    color: #22333b;
-}
-.intro-text h1 {
-    font-size: 4.5rem;
-    transform: translateY(100%);
-    opacity: 0;
-    animation-name: oliverthomas;
-    animation-fill-mode: forwards;
-    animation-delay: 0.5s;
-    animation-duration: 2s;
-}
-@keyframes oliverthomas {
-    from {opacity: 0; transform: translateY(100%)}
-    to {opacity: 1; transform: translateY(0)}
-}
-.intro-text h2 {
-    font-size: 4.5rem;
-    transform: translateY(100%);
-    opacity: 0;
-    animation-name: oliverthomas2;
-    animation-fill-mode: forwards;
-    animation-delay: 1.6s;
-    animation-duration: 1.5s;
-}
-.intro-text h1 span {
-    color: #e5dada;
-}
-.intro-text h2 span {
-    color: #840032;
-}
-@keyframes oliverthomas2 {
-    from {opacity: 0; transform: translateY(100%)}
-    to {opacity: 1; transform: translateY(0)}
-}
-.intro-text h3 {
-    color: #22333b;
-    font-size: 3rem;
-    transform: translateY(100%);
-    opacity: 0;
-    animation-name: oliverthomas3;
-    animation-fill-mode: forwards;
-    animation-delay: 2.1s;
-    animation-duration: 1.5s;
-}
-@keyframes oliverthomas3 {
-    from {opacity: 0; transform: translateY(100%)}
-    to {opacity: 1; transform: translateY(0)}
-}
-#about:hover, #portfolio:hover, #contact:hover, .dots:hover {
-    text-shadow: white 0px 0px 15px;
-    color: #e5dada;
-    cursor: pointer;
-}
-.dots {
-    display: flex;
-    position: absolute;
-    bottom: 10px;
-    right: 40px;
-    color: #22333b;
     list-style-type: none;
-    font-size: 50px;
-    opacity: 0;
-    animation-name: dots-fade;
+}
+
+.main-container {
+    max-width: 1300px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    z-index: 2;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    width: 100vw;
+    height: 8vh;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.247), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: translateY(-110%);
+    animation-name: header-slide;
+    animation-duration: 1700ms;
     animation-fill-mode: forwards;
-    animation-delay: 3s;
-    animation-duration: 1.5s;
-    font-family: 'Black Ops One', cursive;
+    animation-delay: 4000ms;
 }
-@keyframes dots-fade {
-    from {opacity: 0}
-    to {opacity: 1}
+
+@keyframes header-slide {
+    0% {transform: translateY(-110%);}
+    100% {transform: translateY(0);}
 }
-.dots li {
-    transform: rotate(-90deg);
+
+.nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
 }
-.portfolio-wrapper {
-    background: #22333b;
-    margin-top: 80px;
+
+
+.nav li {
+    padding: 0 20px;
+    font-size: 1rem;
+    font-family: Helvetica, sans-serif;
+    
 }
-#about {
-    background-image: url(./BeFunky-collage\ \(4\).jpeg);
+
+.nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #001E50;
+    height: 100%;
+    transition: all ease 200ms;
+}
+
+.burger-container {
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #001E50;
+    margin: 5px;
+}
+
+.nav a:hover {
+    background: #001E50;
+    color: #fff;
+}
+
+.vw-logo {
+    position: relative;
+    top: 2px;
+    height: 6vh;
+    margin-left: 15px;
+}
+
+.landing {
+    background:#fff;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.color-container {
+    height: 1000px;
+}
+
+.blue {
+    background: #001E50;
+    height: 0px;
+    animation-name: blue-slide;
+    animation-duration: 1700ms;
+    animation-fill-mode: forwards;
+    animation-delay: 4000ms;
+}
+
+@keyframes blue-slide {
+    0% {height: 0px;}
+    100% {height: 600px;}
+}
+
+.egolf {
+    top: 320px;
+    right: 100px;
+    position: absolute;
+    width: 1100px;
+    opacity: 0;
+    animation-name: fade;
+    animation-duration: 1500ms;
+    animation-fill-mode: forwards;
+    animation-delay: 500ms;
+}
+
+@keyframes fade {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.blurb {
+    position: absolute;
+    top: 200px;
+    left:200px;
+    max-width: 430px;
+    color: #fff;
+    font-family: helvetica, sans-serif;
+    z-index: 1;
+}
+
+.blurb h1 {
+    font-size: 2rem;
+    margin-bottom: 35px;
+}
+
+.blurb p {
+    line-height: 1.5rem;
+}
+
+.blurb h2 {
+    display: inline-block;
+    margin: 15px 20px 0 0;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 18px;
+    padding: 5px 15px;
+    opacity: 0;
+    animation-name: fade;
+    animation-duration: 2500ms;
+    animation-fill-mode: forwards;
+    animation-delay: 6000ms;
+}
+
+.blurb h2:hover {
+    background: #fff;
+    color: #001E50;
+}
+
+#other-h2 {
+    color: #001E50;
+    background: #fff;
+}
+
+#other-h2:hover {
+    color: #fff;
+    background: #001E50;
+}
+
+.powerful {
+    color: #001E50;
+    background: #fff;
+    opacity: 0;
+    animation-name: fade;
+    animation-duration: 1500ms;
+    animation-fill-mode: forwards;
+    animation-delay: 2000ms;
+}
+
+.why-wouldnt {
+    font-weight: bolder;
+}
+
+#vw-logo2-container {
+    width: 100%;
+    text-align: center;
+    padding: 100px 0 50px 0;
+}
+
+.vw-logo2 {
+    width: 150px;
+}
+
+.info-container {
+    width: 100%;
+}
+
+.info {
+    display: grid;
+    max-width: 1500px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    font-family: helvetica, sans-serif;
+}
+
+.grid-item {
+    height: 500px;
+}
+
+.image {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 700px;
-    margin-top: 40px;
-    cursor: default !important;
 }
-.blend-color {
-    width: 100%;
-    height: 100%;
-    background-color: #22333bad;
-    
+
+.egolf-front {
+    background-image: url(./egolf.jpg);
 }
-.about-me {
+
+.egolf-interior {
+    background-image: url(./vwinterior.jpg);
+}
+
+.egolf-charging {
+    background-image: url(./vwcharging.jpg);
+}
+
+.grid-item {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 50px 0;
-}
-#profile-pic {
-    width: 200px;
-    border-radius: 50%;
-    border: solid 7px #e5dada;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    box-sizing: content-box;
-}
-.about-me h1 {
-    color: #e5dada;
-    font-size: 2rem;
-    letter-spacing: 1px;
-    font-family: 'Bebas Neue', cursive;
-    text-shadow: rgb(31, 31, 31) 5px 5px 5px;
 }
 
-.about-me p {
-    color: #e5dada;
-    line-height: 1.5em;
-    font-size: 1.2rem;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    margin: 0 50px;
-    text-shadow: rgb(31, 31, 31) 5px 5px 5px;
+.info-text {
+    margin: 0 180px 0 30px;
+    line-height: 2.2rem;
 }
-.portfolio {
-    padding: 30px 100px;
-    max-width: 1500px;
-    margin: 0 auto;
+
+.info-text p {
+    font-size: 1.1rem;
 }
-.portfolio h1 {
-    text-align: center;
-    color: #e5dada;
-    letter-spacing: 1px;
-    font-size: 2.5em;
-    font-family: 'Bebas Neue', cursive;
+
+.right {
+    text-align: right;
+    margin: 0 30px 0 180px;
 }
-.project {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    grid-auto-rows: auto;
-    padding: 80px 0;
-    border-bottom: #1b2a30 solid 3px;
+
+.quick-stats-container {
     width: 100%;
+}
+
+.quick-stats {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 200px auto 50px auto;
+    max-width: 1200px;
+}
+
+.quick-stats-item {
+    width: 250px;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+}
+
+.quick-stats-item h1 {
+    margin: 40px 0 20px 0;
+    font-size: 1.5rem;
+    color: rgb(137, 138, 141);
+}
+
+.quick-stats-item p {
+    margin: 10px;
+    line-height: 1.7rem;
+    color: #001E50;
+}
+
+.quick-stats-item img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.356); 
+    transition: all ease 300ms;
+}
+
+.quick-stats-item img:hover {
+    transform: scale(0.95);
+}
+
+.otr-container {
+    margin: 100px 0;
+}
+
+.otr img {
+    width: 70%;
+}
+
+.otr {
+    text-align: center;
+    font-family: helvetica, sans-serif;
+    color: #001E50;
+}
+
+.otr h1 {
+    font-weight: lighter;
+    font-size: 3rem;
+}
+
+.otr h2 {
+    font-weight: lighter;
+    font-size: 2rem;
+}
+
+.form-container {
+    width: 100%;
+    margin: 170px 0;
+}
+
+.form {
+    font-family: helvetica, sans-serif;
+    width: 90%;
+    max-width: 800px;
+    padding: 30px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+}
+
+.form h1 {
+    background: #001E50;
+    color: #fff;
+    font-size: 18px;
+    padding: 20px;
+    margin: -30px -30px 30px -30px;
+}
+
+.form input, textarea {
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    height: 45px;
+    font-family: helvetica, sans-serif;
+}
+
+.form textarea {
+    resize: none;
     
 }
-.last {
-    border: none !important;
-}
-#last-image, #last-h1 {
-    cursor: default;
-    filter: none;
-}
-.images {
-    width: 100%;
-    border-radius: 15px;
-    transition: all ease 0.2s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
-    margin: 0 auto;
-}
-#dashboard-img {
-    width: 60%;
-}
-.img-wrapper {
-    width: 100%;
-    text-align: center;
-}
-.images:hover, .text-box p a:hover, .text-box h1:hover, .sm-links img:hover {
-    filter: brightness(60%);
+
+.form input[type="submit"] {
     cursor: pointer;
 }
-.text-box {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    padding: 0 10px;
+
+.form input[type="submit"]:hover {
+    filter: brightness(70%);
 }
-.text-box p {
-    position: relative;
-    top: -30px;
-    color: #e5dada;
-    margin: 0 40px;
-    line-height: 1.4em;
-    font-size: 1.1rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
-}
-.text-box p span {
-    font-weight: 500;
-    color: #ffffff;
-}
-.text-box h1 {
-    position: relative;
-    top: -30px;
-    margin: 40px 40px 15px 40px;
-    color: #e5dada !important;
-    font-size: 1.8em;
-    font-family: 'Bebas Neue', cursive;
-    text-decoration: underline;
-    transition: all ease 0.2s;
-}
-.text-box p a {
-    text-decoration: none;
-    color: #1b2a30;
-    background: #e5dada;
-    padding: 0 8px;
-    font-weight: 500;
-    border-radius: 7px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+
 footer {
+    background: #001E50;
+    height: 500px;
+    color: #fff;
     position: relative;
-    height: 220px;
-    background: #1b1b1b;
 }
-.get-in-touch {
-    width: 220px;
-    height: 150px;
-    margin: 0 auto;
-    padding-top: 40px;
-    text-align: center;
-    color: #e5dada;
-    font-size: 0.8em;
-    font-family: 'Bebas Neue', cursive;
-}
-.get-in-touch h1 {
-    padding-bottom: 20px;
-}
-.get-in-touch ul {
-    list-style-type: none;
+
+.footer-container {
     display: flex;
     justify-content: space-between;
+    font-size: 1rem;
+    font-family: Helvetica, sans-serif;
+    padding: 50px 100px 50px 100px;
+    height: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
 }
-.sm-links img {
-    width: 45px;
-    transition: all ease 0.4s;
+
+.footer-h1 {
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+    color: rgb(137, 138, 141);
+    font-weight: normal;
 }
-.sm-links img:hover {
-    transform: rotate(360deg);
+
+.footer-nav li, .footer-nav-social i, .footer-nav-models li, .footer-nav-tools li {
+    margin-bottom: 20px;
 }
-.ot {
+
+.fab {
+    font-size: 18px;
+}
+
+.footer-nav li:hover, .footer-nav-social li:hover, .footer-nav-models li:hover, .footer-nav-tools li:hover {
+    filter: brightness(70%);
+}
+
+.copywrite {
+    font-family: sans-serif;
+    font-size: 13px;
     position: absolute;
-    bottom: 13px;
-    left: 20px;
-    color: #757575;
-    font-size: 0.5rem;
-    font-family: 'Montserrat', sans-serif;
+    bottom: 10px;
+    left: 15px;
 }
-.ot h1 {
-    font-weight: 300;
-}
-    
-@media only screen and (max-width: 1340px) {
-    .project {
-        display: block;
+
+@media screen and (max-width: 1600px) {
+
+    .egolf {
+        width: 900px;
     }
-    .intro-text {
-        max-width: 1100px;
-    }
-    .intro-text h1, .intro-text h2 {
-        font-size: 3.5rem;
-    }
-    .text-box p, .text-box h1 {
-        top: 0;
-    }
-    #dashboard-img {
-        width: 40%;
-    }
-}
-@media only screen and (max-width: 1000px) {
-    .portfolio-wrapper {
-        margin-top: 20px;
-    }
-    .portfolio {
-        padding: 40px 30px;
-    }
-    .first {
-        padding-top: 30px;
-    }
-    #dashboard-img {
-        width: 50%;
-    }
-}
-@media only screen and (max-width: 800px) {
-    .intro-text h1, .intro-text h2 {
-        font-size: 2.6rem;
-    }
-}
-@media only screen and (max-width: 730px) {
-    #profile-pic {
-        width: 150px;
-    }
-}
-@media only screen and (max-width: 600px) {
-    .intro {
-        border: none;
-    }
-    #about {
-        margin-top: 0px;
-        background-image: url(./BeFunky-collage\ \(6\).jpeg);
-        height: 900px;
-    }
-    .dots {
-        bottom: 100px;
-    }
-    #dashboard-img {
-        width: 75%;
-    }
-}
-@media only screen and (max-width: 550px) {
-    .text-box h1 {
-        font-size: 1.5em;
-        margin: 40px 0px 15px 0px;
-    }
-    .text-box p {
-        margin: 0;
-        font-size: 1em;
-    }
-    .about-me p {
-        margin: 0 20px;
-        font-size: 1.1em;
-    }
-    #dashboard-img {
-        width: 95%;
-    }
-}
-@media only screen and (max-width: 450px) {
-    .intro-text h1, .intro-text h2 {
-        font-size: 2rem;
-    }
-    .nav {
-        font-size: 15px;
-    }
-    .nav li {
-        margin-left: 20px;
+
+    .blurb {
+        left: 100px;
     }
 }
 
+@media screen and (max-width: 1400px) {
+
+    .color-container {
+        height: 700px;
+    }
+
+    .egolf {
+        width: 700px;
+        top: 400px;
+    }
+
+    .blurb {
+        top: 150px;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+
+    .blurb {
+        left: 50px;
+    }
+
+    .egolf {
+        right: 0;
+    }
+
+}
+
+@media screen and (max-width: 1050px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background: rgb(141, 141, 141);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 300px;
+        text-align: center;
+        transform: translateX(100%);
+        margin-right: 0;
+
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav a {
+        width: 100%;
+        color: #fff;
+        opacity: 0;
+    }
+
+    .burger-container {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .egolf {
+        width: 500px;
+        top: 450px;
+    }
+
+    .blurb {
+        max-width: 550px;
+    }
+
+    .info-text {
+        margin: 0 30px;
+    }
+
+}
+
+@media screen and (max-width: 820px) {
+
+    .footer-container {
+        padding: 30px;
+    }
+
+    .grid-item {
+        height: 300px;
+    }
+
+    .info-text p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+
+    .info-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .vw-logo2 {
+        width: 100px;
+    }
+
+    .quick-stats-item {
+        width: 220px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    footer {
+        height: 100%;
+    }
+
+    .footer-container {
+        display: block;
+    }
+
+    .footer-container ul {
+        margin: 60px 0;
+    }
+
+    .footer-h1 {
+        margin-bottom: 20px;
+    }
+
+    .quick-stats {
+        display: block;
+        margin-top: 70px;
+    }
+
+    .quick-stats-item {
+        margin: 50px auto;
+        width: 300px;
+    }
+
+    .otr h1 {
+        font-size: 2.3rem;
+    }
+
+    .otr h2 {
+        font-size: 1.7rem;
+    }
+
+    .otr-container {
+        margin: 100px 30px;
+    }
+
+    .otr img {
+        width: 100%;
+    }
+
+    .info {
+        display: flex; 
+        flex-direction: column; 
+    }
+
+    #first {
+        order: 1; 
+    }
+
+    #second {
+        order: 2; 
+    }
+
+    .right {
+        text-align: left;
+    }
+
+    .blurb {
+        margin-right: 30px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .egolf {
+        width: 100%;
+    }
+
+    .blurb {
+        top: 100px;
+    }
+
+    .blurb h1 {
+        font-size: 1.6rem;
+    }
+
+    .blurb p {
+        font-size: 0.9rem;
+    }
+
+    .nav {
+        width: 250px;
+    }
+
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
